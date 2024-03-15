@@ -71,7 +71,7 @@ jupyter_core
 jupyter_server  
 jupyter_server_terminals  
 jupyterlab
-jupyterlab-widgets==
+jupyterlab-widgets
 jupyterlab_pygments  
 jupyterlab_server  
 keplergl==
