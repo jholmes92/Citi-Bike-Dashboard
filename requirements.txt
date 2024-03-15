@@ -65,7 +65,7 @@ jsonpointer
 jsonschema  
 jsonschema-specifications  
 jupyter-events  
-jupyter-lsp==
+jupyter-lsp
 jupyter_client  
 jupyter_core  
 jupyter_server  
