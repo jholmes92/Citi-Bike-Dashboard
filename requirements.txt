@@ -76,7 +76,7 @@ jupyterlab_pygments
 jupyterlab_server  
 keplergl
 kiwisolver  
-Levenshtein==
+Levenshtein
 mamba-gator  
 markdown-it-py  
 markov-clustering==
