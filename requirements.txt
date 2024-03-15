@@ -176,7 +176,7 @@ toolz
 tornado     
 tqdm==
 traitlets     
-traittypes=
+traittypes==
 types-python-dateutil     
 typing-utils     
 typing_extensions     
