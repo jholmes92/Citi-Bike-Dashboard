@@ -168,7 +168,7 @@ streamlit-keplergl==
 tenacity     
 terminado     
 texttable==
-threadpoolctl=
+threadpoolctl==
 thresholdclustering=
 tinycss2     
 toml     
