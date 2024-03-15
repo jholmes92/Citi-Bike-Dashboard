@@ -136,8 +136,7 @@ python-json-logger
 python-Levenshtein
 python-louvain
 pytz    
-pyvis
-pywin32    
+pyvis    
 pywinpty    
 PyYAML    
 pyzmq    
