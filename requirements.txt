@@ -89,7 +89,6 @@ mkl-fft
 mkl-random  
 mkl-service
 munkres
-nb_conda_kernels  
 nbclient  
 nbconvert  
 nbformat  
