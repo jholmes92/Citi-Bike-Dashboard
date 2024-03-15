@@ -60,7 +60,7 @@ jedi
 Jinja2 
 joblib==1.
 json5 
-jsonpickle==
+jsonpickle
 jsonpointer 
 jsonschema  
 jsonschema-specifications  
