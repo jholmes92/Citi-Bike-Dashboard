@@ -188,6 +188,6 @@ validators
 watchdog     
 wcwidth     
 webcolors     
-webdriver-manager=
-webencodings=
-websocket-client=
+webdriver-manager==
+webencodings==
+websocket-client==
