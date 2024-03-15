@@ -169,7 +169,7 @@ tenacity
 terminado     
 texttable==
 threadpoolctl==
-thresholdclustering=
+thresholdclustering==
 tinycss2     
 toml     
 toolz     
