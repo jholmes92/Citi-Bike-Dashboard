@@ -74,7 +74,7 @@ jupyterlab
 jupyterlab-widgets
 jupyterlab_pygments  
 jupyterlab_server  
-keplergl==
+keplergl
 kiwisolver  
 Levenshtein==
 mamba-gator  
