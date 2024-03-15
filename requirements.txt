@@ -164,7 +164,7 @@ soupsieve
 stack-data    
 statsmodels    
 streamlit     
-streamlit-keplergl=
+streamlit-keplergl==
 tenacity     
 terminado     
 texttable=
