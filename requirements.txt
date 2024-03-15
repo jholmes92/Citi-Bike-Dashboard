@@ -79,7 +79,7 @@ kiwisolver
 Levenshtein
 mamba-gator  
 markdown-it-py  
-markov-clustering==
+markov-clustering
 MarkupSafe  
 matplotlib  
 matplotlib-inline  
