@@ -26,39 +26,39 @@ st.set_page_config(
 # Define the aspect variable for different sections
 selected_aspect = st.selectbox(
     "Select an aspect of the analysis:",
-    ["Intro page", "Weather component and bike usage", "Most popular stations", "Interactive map with aggregated bike trips", "Conclusions"],
+    ["Intro", "Exploring Weekly Bike Rides and Temperature Trends in New York City", "Top 20 Bike Stations in NYC (2022)", "Exploring Geographic Insights Through Interactive Map Screenshots", "Conclusions"],
     index=0
 )
 
 ##### Intro Page #####
-if selected_aspect == "Intro page":
+if selected_aspect == "Intro":
     # Add a title and descriptive text for the Intro page
-    st.title("Analyzing Citi Bike Data for Improved Distribution Strategy in NYC")
+    st.title("2022 Citi Bike Data Analysis: Enhancing New York City Distribution Strategy")
     st.write("""
-    Welcome to the Citi Bike Distribution Analysis Dashboard. As the lead analyst for a bike-sharing service based in New York City, our objective is to conduct a descriptive analysis of existing data from Citi Bike facilities. Our goal is to uncover actionable insights to address distribution issues, ensuring a seamless experience for our users and further solidifying our position as a leader in eco-friendly transportation solutions in the city.
+    Welcome to the Citi Bike Distribution Analysis Dashboard. As lead analyst for New York City's premier bike-sharing service, our aim is to analyze Citi Bike facility data to uncover actionable insights. Our goal: address distribution challenges to ensure a seamless user experience and bolster our reputation as eco-friendly transportation leaders.
 
-    Context: Citi Bike has experienced increased popularity, particularly since the Covid–19 pandemic, leading to higher demand and distribution challenges. This dashboard serves as a tool to diagnose distribution issues and provide informed recommendations to enhance our logistics model.
+Context: Citi Bike's popularity surged post-Covid–19, posing distribution challenges. This dashboard aids in diagnosing issues and providing logistics recommendations.
 
-    Let's explore the data and discover insights to optimize our bike distribution strategy.
+Let's delve into the data and optimize our bike distribution strategy.
     """)
 
     
     
 ##### Weather component and bike usage #####
-elif selected_aspect == "Weather component and bike usage":
+elif selected_aspect == "Exploring Weekly Bike Rides and Temperature Trends in New York City":
     # Load the new dataset 'newyork_data_weekly.csv' as 'df_weekly'
     df_weekly = pd.read_csv('newyork_data_weekly.csv')
     
     # Add a title and descriptive text for the Weather component and bike usage page
-    st.title("Weather Component and Bike Usage Analysis")
+    st.title("Exploring Weekly Bike Rides and Temperature Trends in New York City")
     st.write("""
-    This section focuses on analyzing the relationship between weekly bike rides and temperature trends in New York City. By visualizing these two key factors together, we aim to uncover insights into how weather conditions impact bike usage patterns, user behavior, and distribution strategies.
-    
-    Bike Rides: Weekly count of bike rides, reflecting user demand and usage patterns.
-    
-    Temperature: Weekly average temperature, influencing user preferences and biking activity.
-    
-    Understanding the correlation between these variables can help optimize distribution strategies, address availability issues, and enhance the overall biking experience for users across the city.
+    This section examines the relationship between weekly bike rides and temperature trends in New York City. By visualizing these factors together, we aim to understand how weather impacts bike usage patterns and distribution strategies.
+
+Key Factors:
+
+Bike Rides: Reflects user demand and usage patterns.
+
+Temperature: Influences user preferences and biking activity.
     """)
 
     # Create the dual-axis line chart
@@ -88,20 +88,22 @@ elif selected_aspect == "Weather component and bike usage":
     # Add a Markdown section for interpretation of the chart's contents
     st.write("""
     **Insights:**
-    
-    The interactive chart above showcases the weekly trends of bike rides and temperature in New York City.
-    
-    - The rise of temperature, and bike rides, are virtually in lock step with one another in March, April and May. We can assume that the warmer weather will drive business growth moving into the summer months.
-    
-    - Business throughout the summer months is at it's strongest, but I also noticed that it continues to stay relatively strong despite temperatures beginning to drop. This is interesting, as we saw temperature and business grow identically in the spring, but that is not the case in the fall. 
+
+- Bike rides and temperature rise in tandem from March to May, suggesting warmer weather drives business growth.
+
+- Business remains strong throughout the summer months, even as temperatures begin to drop. However, this trend shifts in the fall.
+
+**Recommendation:**
+
+- Consider scaling back bike availability between November and April to align with reduced demand during colder months.
     """)
     
     ##### Most popular stations ####
-elif selected_aspect == "Most popular stations":
+elif selected_aspect == "Top 20 Bike Stations in NYC (2022)":
     # Add a title and descriptive text for the Most popular stations page
-    st.title("Top 20 Most Popular Bike Stations in New York City")
+    st.title("Top 20 Bike Stations in New York City (2022)")
     st.write("""
-    This bar chart displays the top 20 most popular bike stations in New York City in 2022 based on the number of trips recorded. Understanding the popularity of these stations is essential for evaluating distribution patterns and identifying areas for improvement in our logistics model.
+    This bar chart showcases the most popular bike stations in New York City based on trip counts recorded in 2022. Understanding station popularity is crucial for optimizing our logistics model.
     """)
 
     # Create the bar chart
@@ -121,51 +123,74 @@ elif selected_aspect == "Most popular stations":
     )
     
     # Display the bar chart
-    st.subheader("Top 20 Most Popular Bike Stations in New York City")
+    
     st.plotly_chart(fig)
     
     # Add a Markdown section for interpretation of the chart's contents
     st.subheader("Insights")
     st.write("""
-    - The color intensity in the chart corresponds to the number of trips, with darker colors indicating higher trip counts. For instance, West 21st Street and 6th Avenue stand out with over 3000 trips, represented by a deep red color. In contrast, 9th Avenue and West 22nd Street show lighter shades, indicating lower trip numbers just over 2000.
+    - Color intensity corresponds to trip counts, with darker colors indicating higher usage.
     
-    - The majority of stations in this graph fall within the range of 2000 to 2500 trips, highlighting consistent usage patterns. While the top 25% exhibit exceptional trip numbers, they do not represent the typical trip volumes observed across most locations.
+- For instance, West 21st Street and 6th Avenue recorded over 3000 trips, represented by deep red.
+
+- In contrast, 9th Avenue and West 22nd Street show lighter shades, indicating lower trip numbers just over 2000.
+
+- Majority of stations fall within the range of 2000 to 2500 trips, reflecting consistent usage patterns. While the top 25% exhibit exceptional trip numbers, they are not representative of typical trip volumes across most locations.
+
+**Recommendation:**
+
+- Consider implementing strategies to ensure bikes are always stocked at the most popular stations to meet user demand effectively.
     """)
     
 ##### Interactive map with aggregated bike trips ####
-elif selected_aspect == "Interactive map with aggregated bike trips":
+elif selected_aspect == "Exploring Geographic Insights Through Interactive Map Screenshots":
     # Add a title and descriptive text for the Most popular stations page
-    st.title("Interactive map with aggregated bike trips")
+    st.title("Exploring Geographic Insights Through Interactive Map Screenshots")
     st.write("""
-    On this page, we present five distinct screenshots extracted from our interactive map, meticulously selected for in-depth analysis. Leveraging a geographical perspective of our data confers a strategic advantage, enabling us to establish direct correlations with locations. The visual representation on a map transcends mere textual addresses, enhancing our understanding and insights.
+    This page presents five screenshots from our interactive map for detailed analysis. Leveraging geographical data allows us to establish direct correlations with locations, enhancing our understanding and insights.
     """)
     
     # Define image information with titles and descriptions
     image_info = {
-        'kepler.gl.tripsfilter.png': ('Trips', 'In this image, we can see how the Trips filter is utilized to narrow down routes to a select few, revealing the most popular routes.'),
-        'kepler.gl.startpoint.png': ('Starting Point', 'This image displays map points indicating the starting positions of various routes.'),
-        'kepler.gl.endpoint.png': ('Ending Point', 'Here, we observe map points representing the ending positions of different routes.'),
-        'kepler.gl.startend.arc.png': ('Start to End | Arc', 'Illustrating both the start and end points of a route with an arc connecting them.'),
-        'kepler.gl.startend.line.png': ('Start to End | Line', 'Showing the start and end points of a route with a line connecting them.'),
+        'kepler.gl.startpoint.png': ('Starting Point', 'Displays starting positions of various routes.'),
+        'kepler.gl.startend.arc.png': ('Start to End | Arc', 'Illustrates routes with arcs connecting start and end points.'),
+        'kepler.gl.endpoint.png': ('Ending Point', 'Shows ending positions of different routes.'),
+        'kepler.gl.startend.line.png': ('Start to End | Line', 'Represents routes with lines connecting start and end points.'),
+        'kepler.gl.tripsfilter.png': ('Trips', 'Highlights popular routes filtered through the Trips feature.'),
     }
 
-    # Display images with titles and descriptions
-    for image_path, (title, description) in image_info.items():
+     # Display images with titles and descriptions
+    col1, col2 = st.columns(2)  # Split the page into two columns
+
+    for index, (image_path, (title, description)) in enumerate(image_info.items()):
         # Read the image file as binary data
         with open(image_path, 'rb') as f:
             image_bytes = f.read()
         
         # Display the image along with its title and description
-        st.image(image_bytes, caption=title, use_column_width=True)
-        st.write(description)
+        if index < 2:
+            with col1:
+                st.image(image_bytes, caption=title, use_column_width=True, width=500)  # Adjust the width as needed
+                st.write(description)
+        else:
+            with col2:
+                st.image(image_bytes, caption=title, use_column_width=True, width=500)  # Adjust the width as needed
+                st.write(description)
 
     # Add Insights section
     st.subheader("Insights")
     st.write("""
-    - There are 3 main takeaways from these images. First, in the 'Trips' image, we can see clearly where our top 10 or so most popular routes are located. This allows us to understand why that might be as additional geographical analysis can be made around those addresses
-    -  Secondly, the 'Starting Point' image gives us a clear idea of where we not only are covering in NYC but where it becomes brighter and more dense. This means certain areas have more riders, which means the need for more units, more opportunity, and ultimately, more sales.
-    - Lastly, I'd like to direct your attention to the 'Start to End | Arc' image. We can see that in the center of the city, there is a large swath of rides that leave the downtown core and move outward. We can learn from this, and use similar visualizations on the map to determine our locations that require the greatest need, and as I mentioned in the last point, the most sales.
+    - The 'Trips' image reveals top routes, aiding geographical analysis for understanding popularity.
+    
+- 'Starting Point' brightness indicates areas with higher rider density, suggesting increased demand and sales opportunities.
+
+- 'Start to End | Arc' demonstrates routes leaving the downtown core, informing decisions on station placement for optimal coverage and sales potential.
+
+**Recommendation:**
+
+- Consider utilizing similar visualizations to determine the optimal number of stations to add along the waterfront.
     """)
+
         
 ##### Conclusions ####
 elif selected_aspect == "Conclusions":
@@ -174,34 +199,30 @@ elif selected_aspect == "Conclusions":
     
     # Seasonal Demand Trends
     st.write("""
-    Seasonal Demand Trends:
+    **Seasonal Demand Trends:**
     
-    Bike Trips show a significant increase during the spring and summer months compared to fall and winter, indicating strong seasonal demand patterns.
-    Understanding these trends can help optimize bike distribution strategies to meet fluctuating demand effectively.
+    Bike trips peak in spring and summer, emphasizing seasonal demand patterns. Optimizing distribution strategies is crucial for meeting fluctuating demand effectively.
     """)
     
     # Station Usage Patterns
     st.write("""
-    Station Usage Patterns:
+    **Station Usage Patterns:**
     
-    Most stations have trip numbers ranging from 2000 to 2500, showcasing consistent usage patterns across locations.
-    Stations like West 21st Street and 6th Avenue stand out with higher trip volumes, suggesting potential areas for increased bike availability.
+    Most stations exhibit consistent usage, with some outliers like West 21st Street and 6th Avenue showing potential for increased bike availability.
     """)
     
     # Geographical Analysis for Expansion
     st.write("""
-    Geographical Analysis for Expansion:
+    **Geographical Analysis for Expansion:**
     
-    Identifying the top 10 popular routes and areas with higher rider density can guide geographical analysis for expansion opportunities.
-    Brighter and denser areas on the map indicate higher demand, signaling the need for more bikes, improved coverage, and potential sales growth.
+    Identifying popular routes and areas with high rider density informs expansion opportunities. Brighter map areas indicate higher demand, guiding bike allocation and potential sales growth.
     """)
     
     # Strategic Insights for Business Development
     st.write("""
-    Strategic Insights for Business Development:
+    **Strategic Insights for Business Development:**
     
-    Utilize visualizations like the 'Start to End | Arc' image to pinpoint locations with high demand and plan distribution strategies accordingly.
-    Focus on areas where rides move outward from the downtown core to optimize bike availability and capitalize on sales opportunities.
+    Leverage visualizations like 'Start to End | Arc' to identify high-demand locations and plan distribution strategies accordingly.
     """)
     
     # Recommendations
@@ -209,18 +230,18 @@ elif selected_aspect == "Conclusions":
     
     # Optimize Bike Distribution
     st.write("""
-    Optimize Bike Distribution:
-    
-    Implement dynamic bike redistribution strategies to address peak seasonal demand, especially during spring and summer months.
-    Utilize real-time data analytics to identify high-demand locations and adjust bike allocation to ensure availability and prevent station overcrowding.
-    Consider incentivizing users to return bikes to less congested stations through rewards or discounts to balance distribution across the network.
+    **Optimize Bike Distribution:**
+
+- Implement dynamic redistribution strategies based on real-time data analytics to ensure availability and prevent station overcrowding.
+
+- Consider user incentives for returning bikes to less congested stations.
     """)
     
     # Expand Service Coverage
     st.write("""
-    Expand Service Coverage:
+    **Expand Service Coverage:**
     
-    Focus on expanding service coverage in areas with high rider density and popular routes identified through geographical analysis.
-    Establish new bike stations in strategic locations to meet growing demand, improve accessibility, and enhance customer satisfaction.
-    Conduct market research to identify underserved neighborhoods or potential growth areas for targeted expansion efforts to capture new user segments and increase ridership.
+- Focus on expanding service coverage in high-density areas and popular routes.
+
+- Conduct market research for targeted expansion efforts to capture new user segments and increase ridership.
     """)
