@@ -245,9 +245,7 @@ elif selected_aspect == "Conclusions":
 
 - Conduct market research for targeted expansion efforts to capture new user segments and increase ridership.
     """)
-
-
-### Add the map  ###
+    ### Add the map  ###
 
 # Path to your HTML file
 path_to_html = "keplergl_map22.html"
