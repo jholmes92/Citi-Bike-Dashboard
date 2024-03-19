@@ -245,3 +245,17 @@ elif selected_aspect == "Conclusions":
 
 - Conduct market research for targeted expansion efforts to capture new user segments and increase ridership.
     """)
+
+
+### Add the map  ###
+
+# Path to your HTML file
+path_to_html = "keplergl_map22.html"
+
+# Read HTML file and store its content in a variable
+with open(path_to_html, 'r') as f:
+    html_data = f.read()
+
+# Display HTML content on the Streamlit dashboard
+st.header("Bike Trip Map of NYC")
+st.components.v1.html(html_data, height=1000)
